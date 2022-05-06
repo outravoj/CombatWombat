@@ -7,6 +7,7 @@ CombatWombat is a project to be used in interactive presentations.
     - [hotpot.ai](#hotpotai)
     - [geopatterns](#geopatterns)
       - [install the package](#install-the-package)
+      - [convert it into PNG](#convert-it-into-png)
   - [UI](#ui)
 ## API
 ### wombo.art
@@ -30,6 +31,13 @@ Work in progress
  ``` 
  pip install .
  ```
+
+#### convert it into PNG
+```
+pip install cairosvg
+```
+
+
 
 
 ## UI
