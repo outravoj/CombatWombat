@@ -7,10 +7,10 @@ def randomword(length):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(length))
 
-def generatePattern(sting):
-    pattern = GeoPattern(string_to_generate, generator='xes')
-    cairosvg.svg2png(bytestring=pattern.svg_string, write_to="images/patterntest_%s.png"%string_to_generate)
-    fp = open("images/patterntest_%s.png"%string_to_generate, "rb")
+def generatePattern(word_in_sting):
+    pattern = GeoPattern(word_in_sting, generator='xes')
+    cairosvg.svg2png(bytestring=pattern.svg_string, write_to="images/patterntest_%s.png"%word_in_sting)
+    fp = open("images/patterntest_%s.png"%word_in_sting, "rb")
     pil_image = Image.open(fp, mode='r', formats=None)
     return pil_image
 
