@@ -23,14 +23,11 @@ Work in progress
 
  or
  clone https://github.com/bryanveloso/geopatterns
- 
- ```
- python setup.py sdist bdist_wheel
- ```
 
  ``` 
- pip install .
+ python3 -m pip install .
  ```
+ 
 
 #### convert it into PNG
 ```
