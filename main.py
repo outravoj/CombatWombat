@@ -1,7 +1,14 @@
 #This is the python GUI app
 import PySimpleGUI as sg
 from PIL import Image, ImageTk
+import sys
 import re
+import cairosvg
+
+sys.path.append("API")
+from geopattern_api import generatePattern
+from text2img import place_text
+
 
 def input_topics(input_sentence: str):
 	#The input topics are limited to 5.
@@ -14,7 +21,7 @@ def input_topics(input_sentence: str):
 		print("Topics deprecated. only 5 allowed")
 	return topics
 
-sg.theme("DarkTeal12")
+sg.theme("black")
 
 layout = [[sg.Text('Enter your session\'s topics: '), sg.Input(key='-TOPICS-')],
           [sg.Text('Input your AHA moment: '), sg.Multiline(size=(40, 5), key='-AHA-', do_not_clear=True)],
@@ -22,10 +29,11 @@ layout = [[sg.Text('Enter your session\'s topics: '), sg.Input(key='-TOPICS-')],
           [sg.Text('Your generated image: '), sg.Text(size=(12, 1), key='-OUTPUT-')],
           [sg.Image(key="the_image", size=(400,400))]]
 
-window = sg.Window('NFT generator', layout, margins=(150,150),finalize=True)
+window = sg.Window('NFT generator', layout,finalize=True)
+window.maximize()
 size = (400, 400)
-im = Image.open("ekackar.png")
-im = im.resize(size, resample=Image.BICUBIC)
+# im = Image.open("ekackar.png")
+# im = im.resize(size, resample=Image.BICUBIC)
 # Convert im to ImageTk.PhotoImage after window finalized
 
 while True:  # Event Loop
@@ -37,9 +45,9 @@ while True:  # Event Loop
 		except ValueError:
 			sg.popup("The Topics input has forbidden characters, please use only letters and numbers.")
 			continue
-
-
-
+		pil_image = generatePattern(topics)
+		im = pil_image.resize(size, resample=Image.BICUBIC)
+		im = place_text(image=im, text=values["-AHA-"])
 		image = ImageTk.PhotoImage(im)
 		window["the_image"].update(data = image)
 	if event == sg.WIN_CLOSED or event == 'Exit':
