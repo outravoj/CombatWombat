@@ -355,25 +355,11 @@ a:focus-visible {
     position: relative;
 }
 
-.mentor {
+.input_box {
     margin-left : 7.1vh;
     border-radius: 12px;
 }
 
-.mentee {
-    margin-left : 7.1vh;
-    border-radius: 12px;
-}
-
-.topics {
-    margin-left : 7.1vh;
-    border-radius: 12px;
-}
-
-.aha {
-    margin-left : 7.1vh;
-    border-radius: 12px;
-}
 
 .custom_button {
     width: 270px;
