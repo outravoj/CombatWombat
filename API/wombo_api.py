@@ -86,8 +86,8 @@ def generateWombo(title: str):
     print(f"{Fore.LIGHTBLUE_EX}Starting generating art.")
 
     createArt = {}
-    createArt["state"] = "generating"
-    while createArt["state"] == "generating":
+    createArt["state"] = "pending"
+    while createArt["state"] == "pending" or createArt["state"] == "generating":
         createArt = requests.get(f"https://app.wombo.art/api/tasks/{taskID}", headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0",
             "Accept": "*/*",
