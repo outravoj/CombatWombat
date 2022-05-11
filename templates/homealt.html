@@ -24,9 +24,9 @@
         </nav>
         <div class="slideshow" style="margin-top: -10vh;">
             <div class="meta">
-                <span class="meta__heading">Now seeing</span>
+                <span class="meta__heading">AHA-Moment</span>
                 <div class="meta__content">
-                    <span class="meta__content-title">DESCRIPTION TEXT HERE</span>
+                    <span class="meta__content-title">{{form_data_passed['AhaMoment']}}</span>
                 </div>
             </div>
             <div class="gallery slides">
@@ -39,6 +39,10 @@
             <h2 class="intro__title">CORA PROJECT NAME</h2>
             <p class="intro__description">
                 This project was enabled by CORA. Props, skur skurr.
+            </p>
+            <p>
+                Mentor: {{form_data_passed['MentorName']}} <br>
+                Menti: {{form_data_passed['MentiName']}}
             </p>
             <a class="intro__link" href="#">View more</a>
         </div>

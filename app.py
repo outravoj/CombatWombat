@@ -17,7 +17,7 @@ def data():
     if request.method == 'POST':
         form_data = request.form
         imagePathList = [generateWomboPath(form_data)]
-        return render_template('homealt.html',imageList=imagePathList)
+        return render_template('homealt.html',imageList=imagePathList, form_data_passed=form_data)
 
 if __name__ == '__main__':
     app.run()
