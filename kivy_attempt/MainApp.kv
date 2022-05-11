@@ -1,0 +1,44 @@
+
+<CustomDropdown>:
+    id: dropdown,
+    Button:
+        id: btn1
+        text: 'Wombo'
+        size_hint_y: None
+        height: '48dp'
+        on_release:
+            dropdown.select(btn1.text)
+    Button:
+        id: btn2
+        text: 'Geopatterns'
+        size_hint_y: None
+        height: '48dp'
+        on_release:
+            dropdown.select(btn2.text)
+
+
+
+<MyFloatLayout>:
+    FloatLayout:
+        size:root.width, root.height
+
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'test.png'
+
+        Button:
+            id: main_button
+            text:"Select AI engine"
+            background_color: 0.4, 0.5, 0.6, 1
+            size_hint: 0.4, 0.2
+            pos_hint: {"x":0, "top":1}
+            on_press: root.change_ai_text()
+
+        Label:
+            id: AI_label,
+            text: "Wombo AI"
+            background_color: 0.3, 0.4, 0.6, 1
+            size_hint: 0.2, 0.2
+            pos_hint: {"x":0.45, "top":1}
