@@ -1,5 +1,6 @@
 from PIL import Image
 import random, string
+import textUtils.text2img as utils
 
 #code from https://github.com/TurfuGoldy/WomboArt
 
@@ -10,7 +11,7 @@ init(autoreset=True)
 
 def generateWomboPath(form_data: dict):
     mentorName = form_data['MentorName']
-    mentiName = form_data['MentiName']
+    menteeName = form_data['MentiName']
     sesTop = form_data['SessionTopic']
     aha = form_data['AhaMoment']
 
@@ -122,6 +123,8 @@ def generateWomboPath(form_data: dict):
         file.close()
     fp = open(f"static/images/{taskID}.png", "rb")
     pil_image = Image.open(fp, mode='r', formats=None)
+    pil_image = utils.place_text(pil_image, mentorName, menteeName, aha)
+    pil_image.save(f"static/images/{taskID}.png", format = 'png')
     return f"images/{taskID}.png"
 
     #os.system(f"explorer {os.getcwd()}\\results\{taskID}.png")
