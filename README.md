@@ -11,11 +11,16 @@ CombatWombat is a project to be used in interactive presentations.
   - [UI](#ui)
 ## API
 ### wombo.art
-is not working for now
+Using https://github.com/TurfuGoldy/WomboArt
+
+```
+python3 -m pip install -r requirements.txt
+```
+
+code got customized to fit our needs.
 
 ### hotpot.ai
-Work in progress
-
+No real option due to lack of API Key / reasonable pricing model
 ### geopatterns
 #### install the package
    
