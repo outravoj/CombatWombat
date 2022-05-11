@@ -5,8 +5,7 @@ import sys
 import re
 import cairosvg
 
-sys.path.append("API")
-from geopattern_api import generatePattern
+from API.geopattern_api import generatePattern
 from text2img import place_text
 
 
