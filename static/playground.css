@@ -357,19 +357,22 @@ a:focus-visible {
 
 .mentor {
     margin-left : 7.1vh;
-    background:white;
+    border-radius: 12px;
 }
 
 .mentee {
     margin-left : 7.1vh;
+    border-radius: 12px;
 }
 
 .topics {
     margin-left : 7.1vh;
+    border-radius: 12px;
 }
 
 .aha {
     margin-left : 7.1vh;
+    border-radius: 12px;
 }
 
 .custom_button {
