@@ -16,7 +16,7 @@ def data():
         return f"The URL /data is accessed directly. Try going to '/form' to submit form"
     if request.method == 'POST':
         form_data = request.form
-        imagePathList = [generateWomboPath(form_data['Title'])]
+        imagePathList = [generateWomboPath(form_data)]
         return render_template('homealt.html',imageList=imagePathList)
 
 if __name__ == '__main__':
