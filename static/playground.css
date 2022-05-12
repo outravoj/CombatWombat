@@ -23,7 +23,7 @@ body {
 	--color-link-hover: #f33ba5;
 	--page-padding: 25px;
 	color: var(--color-text);
-	background-color: var(--color-bg);
+	background-color: #26336E; /*var(--color-bg);*/
 	font-family: termina, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	-webkit-font-smoothing: antialiased;
@@ -166,6 +166,7 @@ a:focus-visible {
 
 .menu__item {
 	text-decoration: none;
+	color: #FBDD3C;
 }
 
 .author {
@@ -366,7 +367,7 @@ a:focus-visible {
     height: 80px;
     border: none;
     outline: none;
-    background: #2f2f2f;
+    background: #FBDD3C;
     color: #fff;
     font-size: 40px;
     border-radius: 40px;
