@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('form.html')
+    return render_template('formalt.html')
     #imagePathList = ['Programming.JPG']
     #return render_template('home.html', imageList=imagePathList)
 
