@@ -1,0 +1,126 @@
+
+body {
+     background-image: url('img.png'); /* for flask application*/
+    /* background-image: url('/cora_project/static/img.png');  for styling purposes*/
+  background-size:100% auto;
+}
+
+.title {
+    margin-top: 200px;
+    font-size: 42pt;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+    margin-right: -100px;
+    line-height: 44pt;
+}
+
+.row {
+  display: flex;
+}
+.column {
+  padding-left: 50px;
+  height: 100vh;
+}
+
+
+.from_styling {
+    font-size: 12pt;
+font-family: 'Montserrat', sans-serif;
+}
+
+.input_box {
+    display: block;
+    margin-bottom: 20px;
+    width: 500px;
+    padding: 7px;
+    resize: none;
+    border: none;
+       font-size: 12pt;
+font-family: 'Montserrat', sans-serif;
+}
+
+.custom_button {
+    width: 90px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #F6A318;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: right-side;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 425px;
+    font-size: 12pt;
+font-family: 'Montserrat', sans-serif;
+}
+
+.small_font{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+.small_stuff_1{
+    margin-top: 50px;
+}
+
+.small_stuff_2{
+    margin-top: -35px;
+    margin-left:350px;
+}
+
+.small_stuff_3{
+    margin-top: -18px;
+    margin-left:550px;
+}
+
+.small_stuff_4{
+    margin-top: 50px;
+    margin-left:450px;
+}
+
+#loader {
+  border: 16px solid #F6A318;
+  border-top: 16px solid #FBDD3D;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+  margin-top: -300px;
+  margin-left: 260px;
+  display:none;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+form{
+  transition: opacity 0.8s ease-out;
+}
+
+.show{
+  display: block;
+}
+
+.fade-out{
+  opacity: 0;
+}
+
+.intro__link {
+    font-family: 'Montserrat', sans-serif;
+    color: #F6A318;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-top: 180px;
+    margin-left: 00px;
+}
+
+
+

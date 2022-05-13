@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('grid_pplayground.html')
+    return render_template('cora_design.html')
     #imagePathList = ['Programming.JPG']
     #return render_template('home.html', imageList=imagePathList)
 
@@ -16,8 +16,8 @@ def data():
         return f"The URL /data is accessed directly. Try going to '/form' to submit form"
     if request.method == 'POST':
         form_data = request.form
-        imagePathList = [generateWomboPath(form_data)]
-        return render_template('homealt.html',imageList=imagePathList, form_data_passed=form_data)
+        imagePath = generateWomboPath(form_data)
+        return render_template('result_page.html',imagePath=imagePath, form_data_passed=form_data)
 
 if __name__ == '__main__':
     app.run()
