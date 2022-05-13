@@ -123,7 +123,7 @@ def generateWomboPath(form_data: dict):
         file.close()
     fp = open(f"static/images/{taskID}.png", "rb")
     pil_image = Image.open(fp, mode='r', formats=None)
-    pil_image = utils.place_text(pil_image, mentorName, menteeName, aha)
+   # pil_image = utils.place_text(pil_image, mentorName, menteeName, aha)
     pil_image.save(f"static/images/{taskID}.png", format = 'png')
     return f"images/{taskID}.png"
 
