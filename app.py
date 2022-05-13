@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('playground.html')
+    return render_template('grid_pplayground.html')
     #imagePathList = ['Programming.JPG']
     #return render_template('home.html', imageList=imagePathList)
 

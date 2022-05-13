@@ -5,6 +5,15 @@
     <title>Display Image</title>
 
     <link rel="stylesheet" href='/static/grid_pplayground.css' />
+
+	<script>
+    function myfunc(){
+             const form = document.getElementById('myform');
+             const spinner = document.getElementById('loader');
+             form.classList.toggle('fade-out');
+             spinner.style.display = "block";
+    }
+    </script>
 </head>
 <body>
    <div class="row">
@@ -23,6 +32,7 @@
                     <p class = "form_styling"><input class="custom_button" type = "submit" value = "Submit" /></p>
                 </form>
         </div>
+		 <div id="loader" ></div>
 	  </div>
 	  <div class="column styling">
 		  <div class="small_stuff_4 small_font">using art as a way to <br> acknowledge relationships</div>
