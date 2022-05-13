@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Image</title>
+
+    <link rel="stylesheet" href='/static/grid_pplayground.css' />
+</head>
+<body>
+   <div class="row">
+	  <div class="column styling">
+		  <div class="small_stuff_1 small_font">AI art generator<br> powered by WOMBO</div>
+		  <div class="small_stuff_2 small_font">IDBM Impact Gala</div>
+		  <div class="small_stuff_3 small_font">ATARCA Project</div>
+		  <div class="title"><p style="color:white"> Create personalized <br> art about what you have <br> learned today! </p> </div>
+	   <div class="actual_inputs" >
+                 <form action="/data/" method = "POST" id="myform" onsubmit="myfunc()">
+					 <input  class="input_box" type = "text" name = "MentorName" placeholder="Mentor Name" />
+						<input  class="input_box" type = "text" name = "MentiName" placeholder="Mentee Name"/>
+						<input  class="input_box" type = "text" name = "SessionTopic" placeholder="Session's topics"/>
+						<!--<input  class="input_box" type = "text" name = "AhaMoment" /> -->
+					 <textarea class="input_box" name = "AhaMoment" rows="5" placeholder="Your desired AHA moments"></textarea>
+                    <p class = "form_styling"><input class="custom_button" type = "submit" value = "Submit" /></p>
+                </form>
+        </div>
+	  </div>
+	  <div class="column styling">
+		  <div class="small_stuff_4 small_font">using art as a way to <br> acknowledge relationships</div>
+	  </div> <!-- empty column -->
+	</div>
+</body>
+</html>

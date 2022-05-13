@@ -1,0 +1,84 @@
+
+body {
+  background-image: url('/cora_project/background/img.png');
+  background-size:100% auto;
+}
+
+.title {
+    margin-top: -0vh;
+    font-size: 42pt;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+    margin-right: -100px;
+    line-height: 44pt;
+}
+
+.row {
+  display: flex;
+}
+.column {
+  padding-left: 50px;
+  height: 100vh;
+}
+
+
+.from_styling {
+    font-size: 12pt;
+font-family: 'Montserrat', sans-serif;
+}
+
+.input_box {
+    display: block;
+    margin-bottom: 20px;
+    width: 500px;
+    padding: 7px;
+    resize: none;
+    border: none;
+       font-size: 12pt;
+font-family: 'Montserrat', sans-serif;
+}
+
+.custom_button {
+    width: 90px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #F6A318;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: right-side;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 425px;
+    font-size: 12pt;
+font-family: 'Montserrat', sans-serif;
+}
+
+.small_font{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+.small_stuff_1{
+    margin-top: 50px;
+}
+
+.small_stuff_2{
+    margin-top: -35px;
+    margin-left:350px;
+}
+
+.small_stuff_3{
+    margin-top: -18px;
+    margin-left:550px;
+}
+
+.small_stuff_4{
+    margin-top: 50px;
+    margin-left:450px;
+}
+
