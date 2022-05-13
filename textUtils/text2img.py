@@ -7,12 +7,14 @@ WHITE = np.array([255, 255, 255])
 BLACK = np.array([0, 0, 0])
 
 # FONT SIZE, TEXT OFFSETS FOR WOMBO AND BREAK LENGTH
-FONT_SIZE = 50
-TL_OFFSET = 20
-TT_OFFSET = 10
-BR_OFFSET = 20
-BB_OFFSET = 25
-BREAK_LENGTH = 30
+FONT_SIZE_NAME = 27
+FONT_SIZE_TEXT = 60
+TL_OFFSET = 45
+TT_OFFSET = 35
+NAME_OFFSET = 12
+BR_OFFSET = 45
+BB_OFFSET = 55
+BREAK_LENGTH = 20
 
 def get_color(image_array: np.ndarray, text_coords: tuple, text_size: tuple) -> tuple:
     color_mean = np.floor(np.mean(image_array[text_coords[1]:text_coords[1] + text_size[1], text_coords[0]:text_coords[0] + text_size[0], :], axis=(0, 1))).astype(int)
@@ -59,7 +61,8 @@ def place_text(image: Image, name1: str, name2: str, text: str) -> Image:
     text = preprocess_text(text)
     strings = [name1, name2, text]
     image_array = np.asarray(image)
-    text_font = ImageFont.truetype('fonts/Montserrat-Black.ttf', FONT_SIZE)
+    name_font = ImageFont.truetype('fonts/Montserrat-Medium.ttf', FONT_SIZE_NAME)
+    text_font = ImageFont.truetype('fonts/Montserrat-Black.ttf', FONT_SIZE_TEXT)
     image_editable = ImageDraw.Draw(image)
     name1_size = None
     name1_coords = None
@@ -68,23 +71,23 @@ def place_text(image: Image, name1: str, name2: str, text: str) -> Image:
 
     for i, string in enumerate(strings):
         if i == 0:
-            name1_size = text_font.getsize_multiline(string)
+            name1_size = name_font.getsize_multiline(string)
             name1_coords = (TL_OFFSET, TT_OFFSET)
             #print(name1_size, name1_coords)
             color_rgb = get_color(image_array, name1_coords, name1_size)
-            image_editable.text(name1_coords, string, color_rgb, font=text_font)
+            image_editable.text(name1_coords, string, color_rgb, font=name_font)
 
         elif i == 1:
-            name2_size = text_font.getsize_multiline(string)
-            name2_coords = (image_array.shape[1] - name2_size[0] - BR_OFFSET, image_array.shape[0] - name2_size[1] - BB_OFFSET)
+            name2_size = name_font.getsize_multiline(string)
+            name2_coords = (TL_OFFSET, TT_OFFSET + NAME_OFFSET + name1_size[1])
             #print(name2_size, name2_coords)
             color_rgb = get_color(image_array, name2_coords, name2_size)
-            image_editable.text(name2_coords, string, color_rgb, font=text_font)
+            image_editable.text(name2_coords, string, color_rgb, font=name_font)
 
         elif i == 2:
             text_size = text_font.getsize_multiline(string)
             text_coords = (random.randint(TL_OFFSET, image_array.shape[1] - text_size[0] - BR_OFFSET),
-                           random.randint(2 * TT_OFFSET + name1_size[1], image_array.shape[0] - text_size[1] - 2 * BB_OFFSET - name2_size[1]))
+                           random.randint(TT_OFFSET + 2 * NAME_OFFSET + name1_size[1] + name2_size[1], image_array.shape[0] - text_size[1] - BB_OFFSET))
             #print(text_size, text_coords)
             color_rgb = get_color(image_array, text_coords, text_size)
             image_editable.text(text_coords, string, color_rgb, font=text_font)
@@ -95,4 +98,4 @@ def place_text(image: Image, name1: str, name2: str, text: str) -> Image:
     return image
 
 if __name__ == "__main__":
-    place_text(Image.open("test.jpg"), "  \t Lukas     Halaska   \n\t", "\n Vojtech  \n \t Outrata  \t", "I    love \n \t  to\t\t\n   suck\n  \nmassive \n\t cocks, which   also   have some hairy and \n sweaty balls attached.")
+    place_text(Image.open("wombo.jpg"), "  \t Lukas     Halaska   \n\t", "\n Vojtech  \n \t Outrata  \t", "African bees  \n \t  can\t\t\n   suck\n  \nmassive \n\t cocks.")
