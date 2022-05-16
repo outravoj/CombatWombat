@@ -83,7 +83,7 @@ def generateWomboPath(form_data: dict):
     }, json={
         "input_spec": {
             "prompt": sesTop,
-            "style": 12,
+            "style": 13,
             "display_freq": 10
         }
     })

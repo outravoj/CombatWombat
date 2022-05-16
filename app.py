@@ -16,7 +16,10 @@ def data():
         return f"The URL /data is accessed directly. Try going to '/form' to submit form"
     if request.method == 'POST':
         form_data = request.form
-        imagePath = generateWomboPath(form_data)
+        try:
+            imagePath = generateWomboPath(form_data)
+        except:
+            return render_template('cora_design.html')
         return render_template('result_page.html',imagePath=imagePath, form_data_passed=form_data)
 
 if __name__ == '__main__':
